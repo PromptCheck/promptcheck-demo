@@ -3,9 +3,9 @@
   input_data:
     prompt: |
       You are a copywriter. Given the product description
-      between /***/, produce:
-      1️⃣ A catchy tagline no more than **7 words**
-      2️⃣ Three benefit bullets starting with •
+      between /***/, produce ONLY the following, with no extra headers or text:
+      1. A catchy tagline (no more than **7 words**) on the first line.
+      2. Three benefit bullets, each starting with • on subsequent lines.
 
       /*** PRODUCT ***
       PromptCheck is a CI tool that runs tests on LLM
