@@ -1,0 +1,17 @@
+- id: tagline_ok
+  name: Generate tagline + bullets
+  input_data:
+    prompt: |
+      You are a copywriter. Given the product description
+      between /***/, produce:
+      1️⃣ A catchy tagline no more than **7 words**
+      2️⃣ Three benefit bullets starting with •
+
+      /*** PRODUCT ***
+      PromptCheck is a CI tool that runs tests on LLM
+      prompts so regressive outputs never reach prod.
+      *** END ***/
+  expected_output:
+    regex_pattern: (?s)^.{0,60}\n• .+\n• .+\n• .+$
+  metric_configs:
+    - metric: regex

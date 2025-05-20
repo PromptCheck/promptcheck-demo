@@ -1,0 +1,8 @@
+# Minimal config for demo
+default_model:
+  provider: openai
+  model_name: gpt-4o-mini
+api_keys:
+  openai: "{{ env.OPENAI_API_KEY }}"
+output_options:
+  include_prompt_sent: true
