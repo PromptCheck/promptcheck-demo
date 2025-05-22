@@ -1,0 +1,37 @@
+    name: PromptCheck Demo CI
+
+    on:
+      push:
+        branches:
+          - main
+      pull_request:
+        branches:
+          - main
+      workflow_dispatch:
+
+    jobs:
+      run_promptcheck_demo:
+        name: Run PromptCheck Demo
+        runs-on: ubuntu-latest
+        permissions:
+          contents: read
+          pull-requests: write # Optional: if you want PR comments from promptcheck
+
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v4
+
+          - name: Set up Python
+            uses: actions/setup-python@v5
+            with:
+              python-version: '3.11'
+          
+          - name: Install PromptCheck
+            run: pip install promptcheck
+
+          - name: Run PromptCheck (explicit paths)
+            # Assumes promptcheck.config.yaml is at the repo root 
+            # and tests are in the tests/ directory.
+            run: promptcheck run --config promptcheck.config.yaml tests --soft-fail
+            env:
+              OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
