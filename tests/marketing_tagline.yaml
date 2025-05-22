@@ -4,7 +4,7 @@
     prompt: |
       You are a copywriter. Given the product description
       between /***/, produce ONLY the following, with no extra headers or text:
-      1. A catchy tagline (no more than **7 words**) on the first line.
+      1. A catchy tagline (no more than **15 words**) on the first line.
       2. Three benefit bullets, each starting with • on subsequent lines.
 
       /*** PRODUCT ***
