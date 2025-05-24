@@ -1,0 +1,12 @@
+- id: "failing_math_test_002"
+  name: "Failing math test (demo)"
+  description: "Test that wrong math answer fails: expects '5' but LLM returns '4'."
+  input_data:
+    prompt: "What is 2 + 2?"
+  expected_output:
+    exact_match_string: "5"
+  metric_configs:
+    - metric: "exact_match"
+  model_config:
+    provider: "dummy"
+    model_name: "dummy-model-v1" 
