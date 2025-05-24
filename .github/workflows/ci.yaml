@@ -30,6 +30,6 @@
           - name: Run PromptCheck (explicit paths)
             # Assumes promptcheck.config.yaml is at the repo root 
             # and tests are in the tests/ directory.
-            run: promptcheck run --config promptcheck.config.yaml tests --soft-fail
+            run: promptcheck run --config promptcheck.config.yaml tests
             env:
               OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
